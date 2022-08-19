@@ -24,7 +24,8 @@ function App() {
         >
           Learn React
         </a> */}
-        <button style={{"width": 100, "height": 20}} onClick={toggleText}>Click me 😊</button>
+        <p>Hello there</p>
+        <button id='btn' style={{"width": 100, "height": 20}} onClick={toggleText}>Click me</button>
         {showText ? <h1>I'm a piece of text.</h1> : null}
       </header>
     </div>
