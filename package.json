@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@cypress/instrument-cra": "^1.4.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
@@ -12,10 +13,13 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "react-scripts -r @cypress/instrument-cra start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test": "yarn run cypress",
+    "eject": "react-scripts eject",
+    "cy:open": "yarn run cypress open",
+    "cy:run": "yarn run cypress",
+    "dev": "start-test 3000 cy:open"
   },
   "eslintConfig": {
     "extends": [
@@ -36,6 +40,9 @@
     ]
   },
   "devDependencies": {
-    "cypress": "^10.6.0"
+    "@cypress/code-coverage": "^3.10.0",
+    "cypress": "^10.6.0",
+    "istanbul-lib-coverage": "^3.2.0",
+    "nyc": "^15.1.0"
   }
 }
